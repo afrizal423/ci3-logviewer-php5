@@ -190,6 +190,16 @@ class CILogViewer {
         else {
             $logs = array();
         }
+
+        // assetnya
+        $folder_asset = FCPATH."logviewer";
+        $cegatan_file_asset = FCPATH."logviewer/jquery-3.7.1.min.js";
+        $folder_system=BASEPATH."logviewer/asset";
+        if (!file_exists($cegatan_file_asset)) {
+            if(!is_dir($folder_asset))
+                $this->copy_directory($folder_system, $folder_asset);
+                // mkdir($folder_asset);
+        }
 		
 
         $data['logs'] = $logs;
@@ -205,6 +215,28 @@ class CILogViewer {
 
 		// var_dump($data);
         return $this->CI->load->view(self::CI_LOG_VIEW_FILE_PATH, $data, true);
+    }
+
+    private function copy_directory( $source, $destination ) {
+        if ( is_dir( $source ) ) {
+        @mkdir( $destination );
+        $directory = dir( $source );
+        while ( FALSE !== ( $readdirectory = $directory->read() ) ) {
+            if ( $readdirectory == '.' || $readdirectory == '..' ) {
+                continue;
+            }
+            $PathDir = $source . '/' . $readdirectory; 
+            if ( is_dir( $PathDir ) ) {
+                $this->copy_directory( $PathDir, $destination . '/' . $readdirectory );
+                continue;
+            }
+            copy( $PathDir, $destination . '/' . $readdirectory );
+        }
+
+        $directory->close();
+        }else {
+        copy( $source, $destination );
+        }
     }
 
 

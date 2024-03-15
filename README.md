@@ -48,6 +48,11 @@ Maka dari itu dengan adanya repo ini semoga bisa membantu teman-teman dalam mend
     $route['logs'] = "logViewerController/index";
     ```
     nantinya hanya tinggal mengakses ```http://base_url/logs```
+- tambahkan ke ```.gitignore```
+    ```
+    logviewer
+    application/views/cilogviewer
+    ```
 - selesai
 
 jika ingin melihat dokumentasi lebih lanjut, silahkan [kunjungi ini](https://github.com/SeunMatt/codeigniter-log-viewer/wiki/CodeIgniter-3-Guide#viewing-log-files-via-api-calls).
