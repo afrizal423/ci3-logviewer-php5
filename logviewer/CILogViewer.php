@@ -313,9 +313,11 @@ class CILogViewer {
         header("Content-Type: application/json");
         if(!$response["status"]) {
             //set a generic bad request code
-            http_response_code(400);
+            // http_response_code(400); // php 5 tidak support
+            header('HTTP/1.0 400 Bad Request');
         } else {
-            http_response_code(200);
+            // http_response_code(200); // php 5 tidak support
+            header('HTTP/1.0 200 OK');
         }
         return json_encode($response);
     }
