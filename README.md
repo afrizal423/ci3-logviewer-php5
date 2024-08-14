@@ -2,7 +2,7 @@
 
 Package untuk menampilkan log dari semua proses dengan tampilan yang _lebih eye catching_.
 
-Package ini adalah pengembangan dari [Seun Matt](https://github.com/SeunMatt/codeigniter-log-viewer/tree/1.1.2), namun terkendala dikarenakan requirement PHP yang tidak cocok dengan server internal kita.
+Package ini adalah pengembangan dari [Seun Matt](https://github.com/SeunMatt/codeigniter-log-viewer/tree/1.1.2), namun terkendala dikarenakan requirement diatas PHP 5 .
 Maka dari itu dengan adanya repo ini semoga bisa membantu teman-teman dalam mendebug.
 
 ## Instalasi
